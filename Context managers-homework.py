@@ -1,4 +1,4 @@
-# HOMEWORK RECURSION
+# HOMEWORK context managers
 # TASK 1
 from typing import Optional, Union
 def to_power(x: Union[int, float], exp: int) -> Optional[Union[int, float]]:
