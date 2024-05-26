@@ -97,6 +97,5 @@ def sum_of_digits(digit_string: str) -> int:
 
 # Test cases
 print(sum_of_digits('26'))
-# Output: 8
 print(sum_of_digits('1893'))
 print(sum_of_digits('test'))
