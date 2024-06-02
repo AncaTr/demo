@@ -1,26 +1,34 @@
-# Task 1
 class Person:
-    def __init__(self,first_name,last_name,age,high,gender,eyes,hair_color):
+    def __init__(self, first_name, last_name, age, height, gender, eyes, hair_color):
         self.first_name = first_name
-        self.last_name= last_name
-        self.age= age
-        self.high= high
-        self.gender= gender
-        self.eyes= eyes
-        self.hair_color=hair_color
-class Student:
-        def __init__(self,class_number):
-            self.class_number=class_number
-class Teacher:
-    def __init__(self,salary,subject):
-        self.salary= salary
-        self.subject= subject
-person=Person("John","Doe",18,1.85,"male","brown","black")
-student=Student(10)
-teacher=Teacher(5000 ,"English")
-print(person.first_name, person.last_name, person.age, person.high,person.gender,person.eyes,person.hair_color)
-print(student.class_number)
-print(teacher.salary,teacher.subject)
+        self.last_name = last_name
+        self.age = age
+        self.height = height
+        self.gender = gender
+        self.eyes = eyes
+        self.hair_color = hair_color
+
+class Student(Person):
+    def __init__(self, class_number, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.class_number = class_number
+
+class Teacher(Person):
+    def __init__(self, salary, subject, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.salary = salary
+        self.subject = subject
+
+# Creating instances
+person = Person("John", "Doe", 18, 1.85, "male", "brown", "black")
+student = Student(10, "Jane", "Doe", 20, 1.70, "female", "blue", "blonde")
+teacher = Teacher(5000, "English", "Alice", "Smith", 35, 1.65, "female", "green", "red")
+
+# Printing attributes
+print(person.first_name, person.last_name, person.age, person.height, person.gender, person.eyes, person.hair_color)
+print(student.first_name, student.last_name, student.age, student.height, student.gender, student.eyes, student.hair_color, student.class_number)
+print(teacher.first_name, teacher.last_name, teacher.age, teacher.height, teacher.gender, teacher.eyes, teacher.hair_color, teacher.salary, teacher.subject)
+
 # Task 2
 
 class Mathematician:
